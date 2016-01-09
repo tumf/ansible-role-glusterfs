@@ -1,0 +1,2 @@
+deb http://ppa.launchpad.net/gluster/glusterfs-3.7/ubuntu test main
+deb-src http://ppa.launchpad.net/gluster/glusterfs-3.7/ubuntu test main
