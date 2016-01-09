@@ -1,0 +1,14 @@
+---
+# tasks file for ansible-role-glusterfs
+- name: Crete distination directories
+  file: path="{{ ansible_unit_test_prefix_dir }}/etc/apt/sources.list.d/" state=directory recurse=yes
+- template: src="gluster.list.j2" dest="{{ ansible_unit_test_prefix_dir }}/etc/apt/sources.list.d/"
+- apt: name="{{ item }}"
+  with_items:
+    - xfsprogs
+    - thin-provisioning-tools
+    - glusterfs-server
+  notify: restart glusterfs-server
+  when: not ansible_unit_test
+- service: name="glusterfs-server" state=started enabled=yes
+  when: not ansible_unit_test

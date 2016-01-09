@@ -1,0 +1,4 @@
+---
+# defaults file for ansible-role-glusterfs
+ansible_unit_test_prefix_dir: ""
+ansible_unit_test: false

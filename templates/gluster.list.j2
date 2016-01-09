@@ -1,0 +1,4 @@
+{% if ansible_distribution_release is defined %}
+deb http://ppa.launchpad.net/gluster/glusterfs-3.7/ubuntu {{ ansible_distribution_release }} main
+deb-src http://ppa.launchpad.net/gluster/glusterfs-3.7/ubuntu {{ ansible_distribution_release }} main
+{% endif %}
